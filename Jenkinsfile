@@ -26,7 +26,7 @@ pipeline {
         stage('Test Integration') {
             steps {
                 echo 'Testing integration..'
-                sh 'wget -m http://localhost:8085/'
+                sh 'wget http://localhost:8085/'
                 sh 'cat index.html | grep Nefta'
             }
         }
