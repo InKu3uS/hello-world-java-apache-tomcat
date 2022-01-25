@@ -17,15 +17,16 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying application....'
+                sh 'docker stop $(docker -p -a -q)'
                 sh 'docker build -t hello-word-java-apache-tomcat .'
-                sh 'docker run -d --rm -p 8083:7000 hello-word-java-apache-tomcat'
+                sh 'docker run -d --rm -p 9800:8082 hello-word-java-apache-tomcat'
                 
             }
         }
         stage('Test Integration') {
             steps {
                 echo 'Testing integration..'
-                sh 'wget http://localhost:8083/'
+                sh 'wget -m http://localhost:9800/'
                 sh 'cat index.html | grep Nefta'
             }
         }
