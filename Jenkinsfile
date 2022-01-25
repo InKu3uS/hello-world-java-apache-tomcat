@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'Deploying application....'
                 sh 'docker build -t hello-word-java-apache-tomcat .'
-                sh 'docker run -d --rm -p 8092:80 hello-word-java-apache-tomcat'
+                sh 'docker run -d -p --rm -p 8092:80 hello-word-java-apache-tomcat'
                 
             }
         }
