@@ -5,5 +5,5 @@
 
   ADD ${ARG} /usr/local/tomcat/webapps/
 
-  EXPOSE 8092
+  EXPOSE 7000
   CMD ["catalina.sh", "run"]
