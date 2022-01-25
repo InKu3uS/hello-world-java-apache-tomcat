@@ -1,4 +1,4 @@
-  FROM tomcat:jre8-temurin-focal
+  FROM tomcat:9.0
   LABEL maintainer="Neftarguez@iespuerto.es"
 
   ARG WAR_FILE=target/*.war
