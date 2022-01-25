@@ -3,7 +3,7 @@
 
   ARG WAR_FILE=target/*.war
 
-  ADD ${ARG} /usr/local/tomcat/webapps/
+  ADD ${WAR_FILE} /usr/local/tomcat/webapps/
 
   EXPOSE 7000
   CMD ["catalina.sh", "run"]
